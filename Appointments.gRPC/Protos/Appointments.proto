@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option csharp_namespace = "Appointments.gRPC";
+
+package appointments;
+
+service AppointmentService {
+  rpc GetAllAppointments (Empty) returns (AppointmentList);
+  rpc GetAppointmentById (AppointmentRequest) returns (AppointmentResponse); 
+}
+
+message Empty {}
+
+message Appointment {
+  string id = 1;
+  string patientId = 2;
+  string doctorId = 3;
+  string date = 4;
+  string notes = 5;
+}
+
+message AppointmentList {
+  repeated Appointment appointments = 1;
+}
+
+message AppointmentRequest {
+  string id = 1;
+}
+
+message AppointmentResponse {
+  string id = 1;
+  string date = 2;
+  string notes = 3;
+  string patientFirstName = 4;
+  string doctorLastName = 5;
+}

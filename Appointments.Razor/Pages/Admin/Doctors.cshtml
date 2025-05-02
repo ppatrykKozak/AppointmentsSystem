@@ -1,0 +1,42 @@
+﻿@page
+@model Appointments.Razor.Pages.Admin.DoctorsModel
+@{
+    ViewData["Title"] = "Doctors";
+}
+
+<h2>List doctors</h2>
+
+<p>
+    <a asp-page="/Admin/AddDoctors">Add Doctors</a>
+</p>
+
+@if (Model.ErrorMessage != null)
+{
+    <p style="color:red;">@Model.ErrorMessage</p>
+}
+else if (Model.Doctors.Any())
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Specialty</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var doctor in Model.Doctors)
+            {
+                <tr>
+                    <td>@doctor.FirstName</td>
+                    <td>@doctor.LastName</td>
+                    <td>@doctor.Specialty</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Empty doctors</p>
+}

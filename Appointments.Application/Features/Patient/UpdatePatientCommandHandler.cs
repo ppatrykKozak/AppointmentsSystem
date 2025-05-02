@@ -19,7 +19,7 @@ public class UpdatePatientCommandHandler : IRequestHandler<UpdatePatientCommand>
     {
         var existing = await _repository.GetByIdAsync(request.Id);
         if (existing is null)
-            return Unit.Value; // lub rzuć wyjątek jeśli chcesz zwrócić 404
+            return Unit.Value; 
 
         existing.FirstName = request.FirstName;
         existing.LastName = request.LastName;

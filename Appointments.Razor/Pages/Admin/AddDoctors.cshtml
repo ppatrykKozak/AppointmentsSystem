@@ -1,0 +1,28 @@
+﻿@page
+@model Appointments.Razor.Pages.Admin.AddDoctorModel
+@{
+    ViewData["Title"] = "Add doctor";
+}
+
+<h2>Add doctor</h2>
+
+<form method="post">
+    <div>
+        <label>FirstName:</label>
+        <input asp-for="FirstName" />
+    </div>
+    <div>
+        <label>LastName:</label>
+        <input asp-for="LastName" />
+    </div>
+    <div>
+        <label>Specialty:</label>
+        <input asp-for="Specialty" />
+    </div>
+    <button type="submit">submit</button>
+
+    @if (Model.ErrorMessage != null)
+    {
+        <p style="color:red;">@Model.ErrorMessage</p>
+    }
+</form>

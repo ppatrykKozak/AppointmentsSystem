@@ -1,0 +1,10 @@
+﻿@page
+@model Appointments.Razor.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Welcome to Razor Pages</h1>
+<p>This is your frontend UI for Appointments.</p>
+<p>Token: @HttpContext.Session.GetString("jwtToken")</p>
+<p>Rola: @HttpContext.Session.GetString("userRole")</p>

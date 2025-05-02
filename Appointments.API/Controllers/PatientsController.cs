@@ -2,9 +2,11 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Appointments.Application.Features.Patients;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Appointments.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PatientsController : ControllerBase
