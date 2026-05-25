@@ -11,7 +11,7 @@ The project was created as part of university coursework and focuses on backend 
 - Clean Architecture
 - MediatR / CQRS
 - Entity Framework Core
-- JWT Authentication
+- JWT-based authentication
 - Swagger
 - Razor Pages
 - NUnit
